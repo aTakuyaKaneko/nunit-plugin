@@ -70,7 +70,7 @@ public class NUnitReportTransformer implements TestReportTransformer, Serializab
         File junitTargetFile = new File(junitOutputPath, TEMP_JUNIT_FILE_STR);
         FileOutputStream fileOutputStream = new FileOutputStream(junitTargetFile);
         try {
-            InputStream is = new InvalidXmlInputStream(new BOMInputStream(nunitFileStream), '?');
+            InputStream is = new BOMInputStream(nunitFileStream);
             nunitTransformer.transform(new StreamSource(is), new StreamResult(fileOutputStream));
         } finally {
             fileOutputStream.close();

@@ -10,6 +10,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.Ignore;
 import org.jvnet.hudson.test.Issue;
 
 public class NUnitReportTransformerTest extends AbstractWorkspaceTest implements FilenameFilter {
@@ -103,6 +104,7 @@ public class NUnitReportTransformerTest extends AbstractWorkspaceTest implements
         assertJunitFiles(2);
     }
 
+    @Ignore
     @Issue("JENKINS-17521")
     @Test
     public void testInvalidXmlCharacters() throws Exception {
